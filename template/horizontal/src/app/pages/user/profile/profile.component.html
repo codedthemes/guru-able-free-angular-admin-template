@@ -1,0 +1,583 @@
+<!--profile cover start-->
+<div class="row">
+  <div class="col-lg-12">
+    <div class="cover-profile">
+      <div class="profile-bg-img">
+        <img class="profile-bg-img img-fluid" src="assets/images/user-profile/bg-img1.jpg" alt="bg-img">
+        <div class="card-body user-info">
+          <div class="col-md-12">
+            <div class="media-left">
+              <a href="javascript:;" class="profile-image">
+                <img class="user-img img-radius" src="assets/images/user-profile/user-img.jpg" alt="user-img">
+              </a>
+            </div>
+            <div class="media-body row">
+              <div class="col-lg-12">
+                <div class="user-title">
+                  <h2>Josephin Villa</h2>
+                  <span class="text-white">Web designer</span>
+                </div>
+              </div>
+              <div>
+                <div class="pull-right cover-btn">
+                  <button type="button" class="btn btn-primary m-b-10 m-r-10"><i class="icofont icofont-plus"></i> Follow</button>
+                  <button type="button" class="btn btn-primary m-b-10"><i class="icofont icofont-ui-messaging"></i> Message</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!--profile cover end-->
+<div class="row">
+  <div class="col-lg-12">
+    <div class="md-tabs">
+      <ngb-tabset>
+        <ngb-tab title="Personal Info">
+          <ng-template ngbTabContent>
+            <div [@fadeInOutTranslate] class="m-t-15">
+              <!-- personal card start -->
+              <div class="card">
+                <div class="card-header">
+                  <h5 class="card-header-text">About Me</h5>
+                  <button id="edit-btn" type="button" class="btn btn-sm btn-primary waves-effect waves-light f-right" (click)="toggleEditProfile()">
+                    <i class="icofont {{ editProfileIcon }}"></i>
+                  </button>
+                </div>
+                <div class="card-body">
+                  <div class="view-info" *ngIf="editProfile">
+                    <div class="row">
+                      <div class="col-lg-12">
+                        <div class="general-info">
+                          <div class="row">
+                            <div class="col-lg-12 col-xl-6">
+                              <div class="table-responsive">
+                                <table class="table m-0">
+                                  <tbody>
+                                  <tr>
+                                    <th scope="row">Full Name</th>
+                                    <td>Josephine Villa</td>
+                                  </tr>
+                                  <tr>
+                                    <th scope="row">Gender</th>
+                                    <td>Female</td>
+                                  </tr>
+                                  <tr>
+                                    <th scope="row">Birth Date</th>
+                                    <td>October 25th, 1990</td>
+                                  </tr>
+                                  <tr>
+                                    <th scope="row">Marital Status</th>
+                                    <td>Single</td>
+                                  </tr>
+                                  <tr>
+                                    <th scope="row">Location</th>
+                                    <td>New York, USA</td>
+                                  </tr>
+                                  </tbody>
+                                </table>
+                              </div>
+                            </div>
+                            <!-- end of table col-lg-6 -->
+                            <div class="col-lg-12 col-xl-6">
+                              <div class="table-responsive">
+                                <table class="table">
+                                  <tbody>
+                                  <tr>
+                                    <th scope="row">Email</th>
+                                    <td><a href="javascript:;">Demo@phenix.com</a></td>
+                                  </tr>
+                                  <tr>
+                                    <th scope="row">Mobile Number</th>
+                                    <td>(0123) - 4567891</td>
+                                  </tr>
+                                  <tr>
+                                    <th scope="row">Twitter</th>
+                                    <td>@codedthemes</td>
+                                  </tr>
+                                  <tr>
+                                    <th scope="row">Skype</th>
+                                    <td>codedthemes.demo</td>
+                                  </tr>
+                                  <tr>
+                                    <th scope="row">Website</th>
+                                    <td><a href="javascript:;">www.demo.com</a></td>
+                                  </tr>
+                                  </tbody>
+                                </table>
+                              </div>
+                            </div>
+                            <!-- end of table col-lg-6 -->
+                          </div>
+                          <!-- end of row -->
+                        </div>
+                        <!-- end of general info -->
+                      </div>
+                      <!-- end of col-lg-12 -->
+                    </div>
+                    <!-- end of row -->
+                  </div>
+                  <!-- end of view-info -->
+                  <div class="edit-info" *ngIf="!editProfile">
+                    <div class="row">
+                      <div class="col-lg-12">
+                        <div class="general-info">
+                          <div class="row">
+                            <div class="col-lg-6">
+                              <div class="table-responsive">
+                                <table class="table">
+                                  <tbody>
+                                  <tr>
+                                    <td>
+                                      <div class="input-group">
+                                        <span class="input-group-prepend"><label class="input-group-text"><i class="icofont icofont-user"></i></label></span>
+                                        <input type="text" class="form-control" placeholder="Full Name" value="Josephine Villa">
+                                      </div>
+                                    </td>
+                                  </tr>
+                                  <tr>
+                                    <td>
+                                      <div class="form-radio">
+                                        <div class="group-add-on">
+                                          <div class="radio radiofill radio-inline">
+                                            <label>
+                                              <input type="radio" name="radio"><i class="helper"></i> Male
+                                            </label>
+                                          </div>
+                                          <div class="radio radiofill radio-inline">
+                                            <label>
+                                              <input type="radio" name="radio" checked><i class="helper"></i> Female
+                                            </label>
+                                          </div>
+                                        </div>
+                                      </div>
+                                    </td>
+                                  </tr>
+                                  <tr>
+                                    <td>
+                                      <input id="dropper-default" class="form-control" type="text" value="October 25th, 1990" placeholder="Select Your Birth Date" />
+                                    </td>
+                                  </tr>
+                                  <tr>
+                                    <td>
+                                      <select id="hello-single" class="form-control">
+                                        <option value="">---- Marital Status ----</option>
+                                        <option value="married">Married</option>
+                                        <option value="single" selected>Single</option>
+                                        <option value="unmarried">Unmarried</option>
+                                      </select>
+                                    </td>
+                                  </tr>
+                                  <tr>
+                                    <td>
+                                      <div class="input-group">
+                                        <span class="input-group-prepend"><label class="input-group-text"><i class="icofont icofont-location-pin"></i></label></span>
+                                        <input type="text" class="form-control" placeholder="Address" value="New York, USA">
+                                      </div>
+                                    </td>
+                                  </tr>
+                                  </tbody>
+                                </table>
+                              </div>
+                            </div>
+                            <!-- end of table col-lg-6 -->
+                            <div class="col-lg-6">
+                              <div class="table-responsive">
+                                <table class="table">
+                                  <tbody>
+                                  <tr>
+                                    <td>
+                                      <div class="input-group">
+                                        <span class="input-group-prepend"><label class="input-group-text"><i class="icofont icofont-mobile-phone"></i></label></span>
+                                        <input type="text" class="form-control" value="(0123) - 4567891" placeholder="Mobile Number">
+                                      </div>
+                                    </td>
+                                  </tr>
+                                  <tr>
+                                    <td>
+                                      <div class="input-group">
+                                        <span class="input-group-prepend"><label class="input-group-text"><i class="icofont icofont-social-twitter"></i></label></span>
+                                        <input type="text" class="form-control" value="@codedthemes" placeholder="Twitter Id">
+                                      </div>
+                                    </td>
+                                  </tr>
+                                  <tr>
+                                    <td>
+                                      <div class="input-group">
+                                        <span class="input-group-prepend"><label class="input-group-text"><i class="icofont icofont-social-skype"></i></label></span>
+                                        <input type="email" class="form-control" value="codedthemes.demo" placeholder="Skype Id">
+                                      </div>
+                                    </td>
+                                  </tr>
+                                  <tr>
+                                    <td>
+                                      <div class="input-group">
+                                        <span class="input-group-prepend"><label class="input-group-text"><i class="icofont icofont-earth"></i></label></span>
+                                        <input type="text" class="form-control" value="www.demo.com" placeholder="website">
+                                      </div>
+                                    </td>
+                                  </tr>
+                                  </tbody>
+                                </table>
+                              </div>
+                            </div>
+                            <!-- end of table col-lg-6 -->
+                          </div>
+                          <!-- end of row -->
+                          <div class="text-center">
+                            <a href="javascript:;" class="btn btn-primary waves-effect waves-light m-r-20">Save</a>
+                            <a href="javascript:;" id="edit-cancel" class="btn btn-default waves-effect" (click)="toggleEditProfile()">Cancel</a>
+                          </div>
+                        </div>
+                        <!-- end of edit info -->
+                      </div>
+                      <!-- end of col-lg-12 -->
+                    </div>
+                    <!-- end of row -->
+                  </div>
+                  <!-- end of edit-info -->
+                </div>
+                <!-- end of card-body -->
+              </div>
+            </div>
+          </ng-template>
+        </ngb-tab>
+        <ngb-tab title="User's Services">
+          <ng-template ngbTabContent>
+            <div [@fadeInOutTranslate] class="m-t-15">
+              <!-- info card start -->
+              <div class="card">
+                <div class="card-header">
+                  <h5 class="card-header-text">User Services</h5>
+                </div>
+                <div class="card-body">
+                  <div class="row">
+                    <div class="col-md-6">
+                      <div class="card b-l-success business-info services m-b-20">
+                        <div ngbDropdown class="card-header">
+                          <div class="service-header">
+                            <a href="javascript:;"><h5 class="card-header-text">Shivani Hero</h5></a>
+                          </div>
+                          <span ngbDropdownToggle class="dropdown-toggle addon-btn text-muted f-right service-btn" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true" role="tooltip">
+                                         </span>
+                          <div ngbDropdownMenu class="dropdown-menu dropdown-menu-right b-none services-list">
+                            <a class="dropdown-item" href="javascript:;"><i class="icofont icofont-edit"></i> Edit</a>
+                            <a class="dropdown-item" href="javascript:;"><i class="icofont icofont-ui-delete"></i> Delete</a>
+                            <a class="dropdown-item" href="javascript:;"><i class="icofont icofont-eye-alt"></i> View</a>
+                          </div>
+                        </div>
+                        <div class="card-body">
+                          <div class="row">
+                            <div class="col-sm-12">
+                              <p class="task-detail">Lorem ipsum dolor sit amet, consectet ur adipisicing elit, sed do eiusmod temp or incidi dunt ut labore et.Lorem ipsum dolor sit amet, consecte.</p>
+                            </div>
+                            <!-- end of col-sm-8 -->
+                          </div>
+                          <!-- end of row -->
+                        </div>
+                        <!-- end of card-body -->
+                      </div>
+                    </div>
+                    <div class="col-md-6">
+                      <div class="card b-l-danger business-info services">
+                        <div ngbDropdown class="card-header">
+                          <div class="service-header">
+                            <a href="javascript:;"><h5 class="card-header-text">Dress and Sarees</h5></a>
+                          </div>
+                          <span ngbDropdownToggle class="dropdown-toggle addon-btn text-muted f-right service-btn" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true" role="tooltip">
+                                         </span>
+                          <div ngbDropdownMenu class="dropdown-menu dropdown-menu-right b-none services-list">
+                            <a class="dropdown-item" href="javascript:;"><i class="icofont icofont-edit"></i> Edit</a>
+                            <a class="dropdown-item" href="javascript:;"><i class="icofont icofont-ui-delete"></i> Delete</a>
+                            <a class="dropdown-item" href="javascript:;"><i class="icofont icofont-eye-alt"></i> View</a>
+                          </div>
+                        </div>
+                        <div class="card-body">
+                          <div class="row">
+                            <div class="col-sm-12">
+                              <p class="task-detail">Lorem ipsum dolor sit amet, consectet ur adipisicing elit, sed do eiusmod temp or incidi dunt ut labore et.Lorem ipsum dolor sit amet, consecte.</p>
+                            </div>
+                            <!-- end of col-sm-8 -->
+                          </div>
+                          <!-- end of row -->
+                        </div>
+                        <!-- end of card-body -->
+                      </div>
+                    </div>
+                    <div class="col-md-6">
+                      <div class="card b-l-info business-info services">
+                        <div ngbDropdown class="card-header">
+                          <div class="service-header">
+                            <a href="javascript:;"><h5 class="card-header-text">Shivani Auto Port</h5></a>
+                          </div>
+                          <span ngbDropdownToggle class="dropdown-toggle addon-btn text-muted f-right service-btn" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true" role="tooltip">
+                                         </span>
+                          <div ngbDropdownMenu class="dropdown-menu dropdown-menu-right b-none services-list">
+                            <a class="dropdown-item" href="javascript:;"><i class="icofont icofont-edit"></i> Edit</a>
+                            <a class="dropdown-item" href="javascript:;"><i class="icofont icofont-ui-delete"></i> Delete</a>
+                            <a class="dropdown-item" href="javascript:;"><i class="icofont icofont-eye-alt"></i> View</a>
+                          </div>
+                        </div>
+                        <div class="card-body">
+                          <div class="row">
+                            <div class="col-sm-12">
+                              <p class="task-detail">Lorem ipsum dolor sit amet, consectet ur adipisicing elit, sed do eiusmod temp or incidi dunt ut labore et.Lorem ipsum dolor sit amet, consecte.</p>
+                            </div>
+                            <!-- end of col-sm-8 -->
+                          </div>
+                          <!-- end of row -->
+                        </div>
+                        <!-- end of card-body -->
+                      </div>
+                    </div>
+                    <div class="col-md-6">
+                      <div class="card b-l-warning business-info services">
+                        <div ngbDropdown class="card-header">
+                          <div class="service-header">
+                            <a href="javascript:;"><h5 class="card-header-text">Hair stylist</h5></a>
+                          </div>
+                          <span ngbDropdownToggle class="dropdown-toggle addon-btn text-muted f-right service-btn" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true" role="tooltip">
+                                         </span>
+                          <div ngbDropdownMenu class="dropdown-menu dropdown-menu-right b-none services-list">
+                            <a class="dropdown-item" href="javascript:;"><i class="icofont icofont-edit"></i> Edit</a>
+                            <a class="dropdown-item" href="javascript:;"><i class="icofont icofont-ui-delete"></i> Delete</a>
+                            <a class="dropdown-item" href="javascript:;"><i class="icofont icofont-eye-alt"></i> View</a>
+                          </div>
+                        </div>
+                        <div class="card-body">
+                          <div class="row">
+                            <div class="col-sm-12">
+                              <p class="task-detail">Lorem ipsum dolor sit amet, consectet ur adipisicing elit, sed do eiusmod temp or incidi dunt ut labore et.Lorem ipsum dolor sit amet, consecte.</p>
+                            </div>
+                            <!-- end of col-sm-8 -->
+                          </div>
+                          <!-- end of row -->
+                        </div>
+                        <!-- end of card-body -->
+                      </div>
+                    </div>
+                    <div class="col-md-6">
+                      <div class="card b-l-danger business-info services">
+                        <div ngbDropdown class="card-header">
+                          <div class="service-header">
+                            <a href="javascript:;"><h5 class="card-header-text">BMW India</h5></a>
+                          </div>
+                          <span ngbDropdownToggle class="dropdown-toggle addon-btn text-muted f-right service-btn" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true" role="tooltip">
+                                         </span>
+                          <div ngbDropdownMenu class="dropdown-menu dropdown-menu-right b-none services-list">
+                            <a class="dropdown-item" href="javascript:;"><i class="icofont icofont-edit"></i> Edit</a>
+                            <a class="dropdown-item" href="javascript:;"><i class="icofont icofont-ui-delete"></i> Delete</a>
+                            <a class="dropdown-item" href="javascript:;"><i class="icofont icofont-eye-alt"></i> View</a>
+                          </div>
+                        </div>
+                        <div class="card-body">
+                          <div class="row">
+                            <div class="col-sm-12">
+                              <p class="task-detail">Lorem ipsum dolor sit amet, consectet ur adipisicing elit, sed do eiusmod temp or incidi dunt ut labore et.Lorem ipsum dolor sit amet, consecte.</p>
+                            </div>
+                            <!-- end of col-sm-8 -->
+                          </div>
+                          <!-- end of row -->
+                        </div>
+                        <!-- end of card-body -->
+                      </div>
+                    </div>
+                    <div class="col-md-6">
+                      <div class="card b-l-success business-info services">
+                        <div ngbDropdown class="card-header">
+                          <div class="service-header">
+                            <a href="javascript:;"><h5 class="card-header-text">Shivani Hero</h5></a>
+                          </div>
+                          <span ngbDropdownToggle class="dropdown-toggle addon-btn text-muted f-right service-btn" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true" role="tooltip">
+                                         </span>
+                          <div ngbDropdownMenu class="dropdown-menu dropdown-menu-right b-none services-list">
+                            <a class="dropdown-item" href="javascript:;"><i class="icofont icofont-edit"></i> Edit</a>
+                            <a class="dropdown-item" href="javascript:;"><i class="icofont icofont-ui-delete"></i> Delete</a>
+                            <a class="dropdown-item" href="javascript:;"><i class="icofont icofont-eye-alt"></i> View</a>
+                          </div>
+                        </div>
+                        <div class="card-body">
+                          <div class="row">
+                            <div class="col-sm-12">
+                              <p class="task-detail">Lorem ipsum dolor sit amet, consectet ur adipisicing elit, sed do eiusmod temp or incidi dunt ut labore et.Lorem ipsum dolor sit amet, consecte.</p>
+                            </div>
+                            <!-- end of col-sm-8 -->
+                          </div>
+                          <!-- end of row -->
+                        </div>
+                        <!-- end of card-body -->
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- info card end -->
+            </div>
+          </ng-template>
+        </ngb-tab>
+        <ngb-tab title="Reviews">
+          <ng-template ngbTabContent>
+            <div [@fadeInOutTranslate] class="m-t-15">
+              <div class="card">
+                <div class="card-header">
+                  <h5 class="card-header-text">Review</h5>
+                </div>
+                <div class="card-body">
+                  <ul class="media-list">
+                    <li class="media">
+                      <div class="media-left">
+                        <a href="javascript:;">
+                          <img class="media-object img-radius comment-img" src="assets/images/avatar-1.jpg" alt="Generic placeholder image">
+                        </a>
+                      </div>
+                      <div class="media-body">
+                        <h6 class="media-heading">Sortino media<span class="f-12 text-muted m-l-5">Just now</span></h6>
+                        <div class="stars-example-css review-star">
+                          <i class="icofont icofont-star"></i>
+                          <i class="icofont icofont-star"></i>
+                          <i class="icofont icofont-star"></i>
+                          <i class="icofont icofont-star"></i>
+                          <i class="icofont icofont-star"></i>
+                        </div>
+                        <p class="m-b-0">Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin commodo. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis.</p>
+                        <div class="m-b-25">
+                          <span><a href="javascript:;" class="m-r-10 f-12">Reply</a></span><span><a href="javascript:;" class="f-12">Edit</a> </span>
+                        </div>
+                        <hr>
+                        <!-- Nested media object -->
+                        <div class="media mt-2">
+                          <a class="media-left" href="javascript:;">
+                            <img class="media-object img-radius comment-img" src="assets/images/avatar-2.jpg" alt="Generic placeholder image">
+                          </a>
+                          <div class="media-body">
+                            <h6 class="media-heading">Larry heading <span class="f-12 text-muted m-l-5">Just now</span></h6>
+                            <div class="stars-example-css review-star">
+                              <i class="icofont icofont-star"></i>
+                              <i class="icofont icofont-star"></i>
+                              <i class="icofont icofont-star"></i>
+                              <i class="icofont icofont-star"></i>
+                              <i class="icofont icofont-star"></i>
+                            </div>
+                            <p class="m-b-0"> Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin commodo. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis.</p>
+                            <div class="m-b-25">
+                              <span><a href="javascript:;" class="m-r-10 f-12">Reply</a></span><span><a href="javascript:;" class="f-12">Edit</a> </span>
+                            </div>
+                            <hr>
+
+                          </div>
+                        </div>
+
+                      </div>
+                    </li>
+                    <!-- Nested media object -->
+                    <div class="media mt-2">
+                      <div class="media-left">
+                        <a href="javascript:;">
+                          <img class="media-object img-radius comment-img" src="assets/images/avatar-1.jpg" alt="Generic placeholder image">
+                        </a>
+                      </div>
+                      <div class="media-body">
+                        <h6 class="media-heading">Cedric Kelly<span class="f-12 text-muted m-l-5">Just now</span></h6>
+                        <div class="stars-example-css review-star">
+                          <i class="icofont icofont-star"></i>
+                          <i class="icofont icofont-star"></i>
+                          <i class="icofont icofont-star"></i>
+                          <i class="icofont icofont-star"></i>
+                          <i class="icofont icofont-star"></i>
+                        </div>
+                        <p class="m-b-0">Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin commodo. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis.</p>
+                        <div class="m-b-25">
+                          <span><a href="javascript:;" class="m-r-10 f-12">Reply</a></span><span><a href="javascript:;" class="f-12">Edit</a> </span>
+                        </div>
+                        <hr>
+                      </div>
+                    </div>
+                    <div class="media mt-2">
+                      <a class="media-left" href="javascript:;">
+                        <img class="media-object img-radius comment-img" src="assets/images/avatar-4.jpg" alt="Generic placeholder image">
+                      </a>
+                      <div class="media-body">
+                        <h6 class="media-heading">Larry heading <span class="f-12 text-muted m-l-5">Just now</span></h6>
+                        <div class="stars-example-css review-star">
+                          <i class="icofont icofont-star"></i>
+                          <i class="icofont icofont-star"></i>
+                          <i class="icofont icofont-star"></i>
+                          <i class="icofont icofont-star"></i>
+                          <i class="icofont icofont-star"></i>
+                        </div>
+                        <p class="m-b-0"> Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin commodo. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis.</p>
+                        <div class="m-b-25">
+                          <span><a href="javascript:;" class="m-r-10 f-12">Reply</a></span><span><a href="javascript:;" class="f-12">Edit</a> </span>
+                        </div>
+                        <hr>
+                        <!-- Nested media object -->
+                        <div class="media mt-2">
+                          <div class="media-left">
+                            <a href="javascript:;">
+                              <img class="media-object img-radius comment-img" src="assets/images/avatar-3.jpg" alt="Generic placeholder image">
+                            </a>
+                          </div>
+                          <div class="media-body">
+                            <h6 class="media-heading">Colleen Hurst <span class="f-12 text-muted m-l-5">Just now</span></h6>
+                            <div class="stars-example-css review-star">
+                              <i class="icofont icofont-star"></i>
+                              <i class="icofont icofont-star"></i>
+                              <i class="icofont icofont-star"></i>
+                              <i class="icofont icofont-star"></i>
+                              <i class="icofont icofont-star"></i>
+                            </div>
+                            <p class="m-b-0">Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin commodo. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis.</p>
+                            <div class="m-b-25">
+                              <span><a href="javascript:;" class="m-r-10 f-12">Reply</a></span><span><a href="javascript:;" class="f-12">Edit</a> </span>
+                            </div>
+                          </div>
+                          <hr>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="media mt-2">
+                      <div class="media-left">
+                        <a href="javascript:;">
+                          <img class="media-object img-radius comment-img" src="assets/images/avatar-2.jpg" alt="Generic placeholder image">
+                        </a>
+                      </div>
+                      <div class="media-body">
+                        <h6 class="media-heading">Mark Doe<span class="f-12 text-muted m-l-5">Just now</span></h6>
+                        <div class="stars-example-css review-star">
+                          <i class="icofont icofont-star"></i>
+                          <i class="icofont icofont-star"></i>
+                          <i class="icofont icofont-star"></i>
+                          <i class="icofont icofont-star"></i>
+                          <i class="icofont icofont-star"></i>
+                        </div>
+                        <p class="m-b-0">Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin commodo. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis.</p>
+                        <div class="m-b-25">
+                          <span><a href="javascript:;" class="m-r-10 f-12">Reply</a></span><span><a href="javascript:;" class="f-12">Edit</a> </span>
+                        </div>
+                        <hr>
+                      </div>
+                    </div>
+                  </ul>
+                  <div class="md-float-material d-flex">
+                    <div class="md-group-add-on p-relative col-lg-12">
+                      <div class="input-group input-group-button input-group-primary">
+                        <span class="input-group-prepend"><label class="input-group-text"><i class="icofont icofont-comment"></i></label></span>
+                        <input type="text" class="form-control" placeholder="Write Comment">
+                        <span class="input-group-append"><label class="input-group-text">
+                                       <button type="button" class="btn btn-primary"><i class="icofont icofont-plus"></i>note</button>
+                        </label></span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </ng-template>
+        </ngb-tab>
+      </ngb-tabset>
+    </div>
+  </div>
+</div>

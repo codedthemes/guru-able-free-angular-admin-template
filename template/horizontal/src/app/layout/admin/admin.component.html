@@ -1,0 +1,548 @@
+<div class="pcoded"
+     [attr.nav-type]="navType"
+     [attr.theme-layout]="themeLayout"
+     [attr.layout-type]="layoutType"
+     [attr.horizontal-placement]="verticalPlacement"
+     [attr.horizontal-layout]="verticalLayout"
+     [attr.pcoded-device-type]="deviceType"
+     [attr.vertical-nav-type]="verticalNavType"
+     [attr.hnavigation-view]="vNavigationView"
+     (window:resize)="onResize($event)">
+  <div class="pcoded-overlay-box"></div>
+  <div class="pcoded-container navbar-wrapper">
+    <nav class="navbar header-navbar pcoded-header" [attr.pcoded-header-position]="pcodedHeaderPosition" [attr.header-theme]="headerTheme">
+      <div class="navbar-wrapper">
+        <div class="navbar-logo" [attr.logo-theme]="logoTheme">
+          <a class="mobile-menu" id="mobile-collapse" href="javascript:;" (click)="toggleOpened()" [exclude]="'#main_navbar'" (clickOutside)="onClickedOutside($event)">
+            <i class="ti-menu"></i>
+          </a>
+          <a [routerLink]="['/']">
+            <img class="img-fluid" src="assets/images/logo.png" alt="Theme-Logo"/>
+          </a>
+          <a (click)="onMobileMenu()" class="mobile-options">
+            <i class="ti-more"></i>
+          </a>
+        </div>
+
+        <div class="navbar-container">
+          <div>
+            <ul class="nav-left">
+              <li>
+                <div class="sidebar_toggle"><a href="javascript:;" (click)="toggleOpened()"><i class="ti-menu f-18"></i></a></div>
+              </li>
+              <li>
+                <a href="javascript:;" appToggleFullScreen>
+                  <i class="ti-fullscreen"></i>
+                </a>
+              </li>
+              <li class="mega-menu-top">
+                <a href="javascript:;">
+                  Mega
+                  <i class="ti-angle-down"></i>
+                </a>
+                <ul class="show-notification row">
+                  <li class="col-sm-3">
+                    <h6 class="mega-menu-title">Popular Links</h6>
+                    <ul class="mega-menu-links">
+                      <li><a [routerLink]="['/forms/advance-elements']">Form Elements</a></li>
+                      <li><a [routerLink]="['/basic/button']">Buttons</a></li>
+                      <li><a [routerLink]="['/map/google']">Maps</a></li>
+                      <li><a [routerLink]="['/user/card']">Contact Cards</a></li>
+                      <li><a [routerLink]="['/user/profile']">User Information</a></li>
+                      <li><a [routerLink]="['/auth/lock-screen']" target="_blank">Lock Screen</a></li>
+                    </ul>
+                  </li>
+                  <li class="col-sm-3">
+                    <h6 class="mega-menu-title">Mailbox</h6>
+                    <ul class="mega-mailbox">
+                      <li>
+                        <a href="javascript:;" class="media">
+                          <div class="media-left">
+                            <i class="ti-folder"></i>
+                          </div>
+                          <div class="media-body">
+                            <h5>Data Backup</h5>
+                            <small class="text-muted">Store your data</small>
+                          </div>
+                        </a>
+                      </li>
+                      <li>
+                        <a href="javascript:;" class="media">
+                          <div class="media-left">
+                            <i class="ti-headphone-alt"></i>
+                          </div>
+                          <div class="media-body">
+                            <h5>Support</h5>
+                            <small class="text-muted">24-hour support</small>
+                          </div>
+                        </a>
+                      </li>
+                      <li>
+                        <a href="javascript:;" class="media">
+                          <div class="media-left">
+                            <i class="ti-dropbox"></i>
+                          </div>
+                          <div class="media-body">
+                            <h5>Drop-box</h5>
+                            <small class="text-muted">Store large amount of data in one-box only
+                            </small>
+                          </div>
+                        </a>
+                      </li>
+                      <li>
+                        <a href="javascript:;" class="media">
+                          <div class="media-left">
+                            <i class="ti-location-pin"></i>
+                          </div>
+                          <div class="media-body">
+                            <h5>Location</h5>
+                            <small class="text-muted">Find Your Location with ease of use</small>
+                          </div>
+                        </a>
+                      </li>
+                    </ul>
+                  </li>
+                  <li class="col-sm-3">
+                    <h6 class="mega-menu-title">Gallery</h6>
+                    <div class="row m-b-20">
+                      <div class="col-sm-4"><img class="img-fluid img-thumbnail" src="assets/images/mega-menu/01.jpg" alt="Gallery-1">
+                      </div>
+                      <div class="col-sm-4"><img class="img-fluid img-thumbnail" src="assets/images/mega-menu/02.jpg" alt="Gallery-2">
+                      </div>
+                      <div class="col-sm-4"><img class="img-fluid img-thumbnail" src="assets/images/mega-menu/01.jpg" alt="Gallery-3">
+                      </div>
+                    </div>
+                    <div class="row m-b-20">
+                      <div class="col-sm-4"><img class="img-fluid img-thumbnail" src="assets/images/mega-menu/02.jpg" alt="Gallery-4">
+                      </div>
+                      <div class="col-sm-4"><img class="img-fluid img-thumbnail" src="assets/images/mega-menu/01.jpg" alt="Gallery-5">
+                      </div>
+                      <div class="col-sm-4"><img class="img-fluid img-thumbnail" src="assets/images/mega-menu/02.jpg" alt="Gallery-6">
+                      </div>
+                    </div>
+                    <button class="btn btn-primary btn-sm btn-block">Browse Gallery</button>
+                  </li>
+                  <li class="col-sm-3">
+                    <h6 class="mega-menu-title">Contact Us</h6>
+                    <div class="mega-menu-contact">
+                      <div class="form-group row">
+                        <label for="example-text-input" class="col-3 col-form-label">Name</label>
+                        <div class="col-9">
+                          <input class="form-control" type="text" placeholder="Artisanal kale" id="example-text-input">
+                        </div>
+                      </div>
+                      <div class="form-group row">
+                        <label for="example-search-input-email" class="col-3 col-form-label">Email</label>
+                        <div class="col-9">
+                          <input class="form-control" type="email" placeholder="Enter your E-mail Id" id="example-search-input-email">
+                        </div>
+                      </div>
+                      <div class="form-group row">
+                        <label for="example-search-input-content" class="col-3 col-form-label">Contact</label>
+                        <div class="col-9">
+                          <input class="form-control" type="number" placeholder="+91-9898989898" id="example-search-input-content">
+                        </div>
+                      </div>
+                      <div class="form-group row">
+                        <label for="exampleTextarea" class="col-3 col-form-label">Message</label>
+                        <div class="col-9">
+                          <textarea class="form-control" id="exampleTextarea" rows="3"></textarea>
+                        </div>
+                      </div>
+                    </div>
+                  </li>
+                </ul>
+              </li>
+            </ul>
+            <ul [@mobileMenuTop]="isCollapsedMobile" class="nav-right" [ngClass]="isCollapsedMobile">
+              <li class="header-notification lng-dropdown">
+                <a href="javascript:;" id="dropdown-active-item">
+                  <img src="assets/images/flags/ENGLISH.jpg" alt=""> English
+                </a>
+                <ul class="show-notification">
+                  <li>
+                    <a href="javascript:;" data-lng="en">
+                      <img src="assets/images/flags/ENGLISH.jpg" alt=""> English
+                    </a>
+                  </li>
+                  <li>
+                    <a href="javascript:;" data-lng="es">
+                      <img src="assets/images/flags/SPAIN.jpg" alt=""> Spanish
+                    </a>
+                  </li>
+                  <li>
+                    <a href="javascript:;" data-lng="pt">
+                      <img src="assets/images/flags/PORTO.jpg" alt=""> Portuguese
+                    </a>
+                  </li>
+                  <li>
+                    <a href="javascript:;" data-lng="fr">
+                      <img src="assets/images/flags/FRANCE.jpg" alt=""> French
+                    </a>
+                  </li>
+                </ul>
+              </li>
+              <li class="header-notification">
+                <a href="javascript:;">
+                  <i class="ti-bell"></i>
+                  <span class="badge bg-c-pink"></span>
+                </a>
+                <ul class="show-notification">
+                  <li>
+                    <h6>Notifications</h6>
+                    <label class="label label-danger">New</label>
+                  </li>
+                  <li>
+                    <div class="media">
+                      <img class="d-flex align-self-center img-radius" src="assets/images/avatar-2.jpg" alt="Generic placeholder image">
+                      <div class="media-body">
+                        <h5 class="notification-user">John Doe</h5>
+                        <p class="notification-msg">Lorem ipsum dolor sit amet, consectetuer elit.</p>
+                        <span class="notification-time">30 minutes ago</span>
+                      </div>
+                    </div>
+                  </li>
+                  <li>
+                    <div class="media">
+                      <img class="d-flex align-self-center img-radius" src="assets/images/avatar-3.jpg" alt="Generic placeholder image">
+                      <div class="media-body">
+                        <h5 class="notification-user">Joseph William</h5>
+                        <p class="notification-msg">Lorem ipsum dolor sit amet, consectetuer elit.</p>
+                        <span class="notification-time">30 minutes ago</span>
+                      </div>
+                    </div>
+                  </li>
+                  <li>
+                    <div class="media">
+                      <img class="d-flex align-self-center img-radius" src="assets/images/avatar-5.jpg" alt="Generic placeholder image">
+                      <div class="media-body">
+                        <h5 class="notification-user">Sara Soudein</h5>
+                        <p class="notification-msg">Lorem ipsum dolor sit amet, consectetuer elit.</p>
+                        <span class="notification-time">30 minutes ago</span>
+                      </div>
+                    </div>
+                  </li>
+                </ul>
+              </li>
+              <li class="header-notification">
+                <a href="javascript:;" (click)="toggleChat()" class="displayChatbox">
+                  <i class="ti-comments"></i>
+                  <span class="badge bg-c-green"></span>
+                </a>
+              </li>
+              <li class="user-profile header-notification">
+                <a [routerLink]="['/']">
+                  <img src="assets/images/avatar-4.jpg" class="img-radius" alt="User-Profile-Image">
+                  <span>John Doe</span>
+                  <i class="ti-angle-down"></i>
+                </a>
+                <ul class="show-notification profile-notification">
+                  <li>
+                    <a [routerLink]="['/crm-contact']">
+                      <i class="ti-settings"></i> Settings
+                    </a>
+                  </li>
+                  <li>
+                    <a [routerLink]="['/user/profile']">
+                      <i class="ti-user"></i> Profile
+                    </a>
+                  </li>
+                  <li>
+                    <a [routerLink]="['/advance/notifications']">
+                      <i class="ti-email"></i> My Messages
+                    </a>
+                  </li>
+                  <li>
+                    <a [routerLink]="['/auth/lock-screen']" target="_blank">
+                      <i class="ti-lock"></i> Lock Screen
+                    </a>
+                  </li>
+                  <li>
+                    <a [routerLink]="['/auth/login/simple']">
+                      <i class="ti-layout-sidebar-left"></i> Logout
+                    </a>
+                  </li>
+                </ul>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <!-- rightbar chat start -->
+    <div [@slideInOut]="verticalPlacement === 'right' ? chatToggleInverse : chatToggle" id="sidebar" class="users p-chat-user">
+      <div class="had-container">
+        <div class="card card_main p-fixed users-main">
+          <div class="user-box">
+            <div class="card-body">
+              <div class="right-icon-control">
+                <input class="form-control search-text" placeholder="Search Friend" id="search-friends" #searchFriends (keyup)="searchFriendList($event)">
+                <div class="form-icon">
+                  <i class="icofont icofont-search"></i>
+                </div>
+              </div>
+            </div>
+            <div class="main-friend-list scroll-window">
+              <perfect-scrollbar [style.max-width]="'100%'" [config]="config">
+                <div (click)="toggleChatInner()" class="media userlist-box" data-id="1" placement="left" ngbTooltip="Josephin Doe">
+                  <a class="media-left" href="javascript:;">
+                    <img class="media-object " src="assets/images/avatar-2.jpg" alt="Generic placeholder image">
+                    <div class="live-status bg-success"></div>
+                  </a>
+                  <div class="media-body">
+                    <div class="f-13 chat-header">Josephin Doe</div>
+                  </div>
+                </div>
+                <div (click)="toggleChatInner()" class="media userlist-box" data-id="2" data-status="online" data-username="Lary Doe" placement="left" ngbTooltip="Lary Doe">
+                  <a class="media-left" href="javascript:;">
+                    <img class="media-object " src="assets/images/avatar-3.jpg" alt="Generic placeholder image">
+                    <div class="live-status bg-success"></div>
+                  </a>
+                  <div class="media-body">
+                    <div class="f-13 chat-header">Lary Doe</div>
+                  </div>
+                </div>
+                <div (click)="toggleChatInner()" class="media userlist-box" data-id="3" data-status="online" data-username="Alice" placement="left" ngbTooltip="Alice">
+                  <a class="media-left" href="javascript:;">
+                    <img class="media-object " src="assets/images/avatar-5.jpg" alt="Generic placeholder image">
+                    <div class="live-status bg-success"></div>
+                  </a>
+                  <div class="media-body">
+                    <div class="f-13 chat-header">Alice</div>
+                  </div>
+                </div>
+                <div (click)="toggleChatInner()" class="media userlist-box" data-id="4" data-status="offline" data-username="Alia" placement="left" ngbTooltip="Alia">
+                  <a class="media-left" href="javascript:;">
+                    <img class="media-object " src="assets/images/avatar-3.jpg" alt="Generic placeholder image">
+                    <div class="live-status bg-danger"></div>
+                  </a>
+                  <div class="media-body">
+                    <div class="f-13 chat-header">Alia</div>
+                  </div>
+                </div>
+                <div (click)="toggleChatInner()" class="media userlist-box" data-id="5" data-status="online" data-username="Suzen" placement="left" ngbTooltip="Suzen">
+                  <a class="media-left" href="javascript:;">
+                    <img class="media-object " src="assets/images/avatar-5.jpg" alt="Generic placeholder image">
+                    <div class="live-status bg-success"></div>
+                  </a>
+                  <div class="media-body">
+                    <div class="f-13 chat-header">Suzen</div>
+                  </div>
+                </div>
+                <div (click)="toggleChatInner()" class="media userlist-box" data-id="6" data-status="offline" data-username="Michael Scofield" placement="left" ngbTooltip="Michael Scofield">
+                <a class="media-left" href="javascript:;">
+                  <img class="media-object " src="assets/images/avatar-2.jpg" alt="Generic placeholder image">
+                  <div class="live-status bg-danger"></div>
+                </a>
+                <div class="media-body">
+                  <div class="f-13 chat-header">Michael Scofield</div>
+                </div>
+              </div>
+              </perfect-scrollbar>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div [@slideOnOff]="verticalPlacement === 'right' ? chatInnerToggleInverse : chatInnerToggle" class="card card_main showChat_inner">
+      <div class="media chat-inner-header">
+        <a class="back_chatBox" (click)="toggleChatInner()">
+          <i class="icofont icofont-rounded-left"></i> Josephin Doe
+        </a>
+      </div>
+      <perfect-scrollbar [style.max-width]="'100%'" [style.max-height]="'calc(100vh - 280px)'" [config]="config">
+        <div class="media chat-messages">
+          <a class="media-left photo-table" href="javascript:;">
+            <img class="media-object  m-t-5" src="assets/images/avatar-1.jpg" alt="Generic placeholder image">
+          </a>
+          <div class="media-body chat-menu-content">
+            <div class="">
+              <p class="chat-cont">I'm just looking around. Will you tell me something about yourself?</p>
+              <p class="chat-time">8:20 a.m.</p>
+            </div>
+          </div>
+        </div>
+        <div class="media chat-messages">
+          <div class="media-body chat-menu-reply">
+            <div class="">
+              <p class="chat-cont">I'm just looking around. Will you tell me something about yourself?</p>
+              <p class="chat-time">8:20 a.m.</p>
+            </div>
+          </div>
+          <div class="media-right photo-table">
+            <a href="javascript:;">
+              <img class="media-object  m-t-5" src="assets/images/avatar-4.jpg" alt="Generic placeholder image">
+            </a>
+          </div>
+        </div>
+      </perfect-scrollbar>
+        <div class="chat-reply-box p-b-20">
+          <div class="right-icon-control">
+            <input type="text" class="form-control search-text" placeholder="Share Your Thoughts">
+            <div class="form-icon">
+              <i class="icofont icofont-paper-plane"></i>
+            </div>
+          </div>
+        </div>
+    </div>
+    <!-- right-bar inner chat end -->
+
+    <div class="pcoded-main-container" [style.margin-top]="headerFixedMargin">
+      <nav id="main_navbar" class=" pcoded-navbar" (clickOutside)="onClickedOutside($event)" [exclude]="'#mobile-collapse'" [attr.pcoded-header-position]="pcodedHeaderPosition" [attr.navbar-theme]="navBarTheme" [attr.active-item-theme]="activeItemTheme" sub-item-theme="theme2" active-item-style="style0" [attr.pcoded-navbar-position]="pcodedSidebarPosition">
+        <div class="sidebar_toggle"><a href="javascript:;"><i class="icon-close icons"></i></a></div>
+        <div class="pcoded-inner-navbar" appAccordion>
+          <span *ngFor="let asideItems of menuItems.getAll()" class="d-color">
+            <ul class="menu-main-item pcoded-item pcoded-left-item" [attr.item-border]="itemBorder" [attr.item-border-style]="itemBorderStyle" [attr.subitem-border]="subItemBorder" *ngFor="let asideItem of asideItems.main" appAccordionLink group="{{asideItem.state}}">
+                <li [routerLinkActive]="['active']" *ngIf="asideItem.type === 'external'" appAccordionLink group="{{asideItem.state}}">
+                  <a appTrigger href="{{asideItem.external}}" target="{{asideItem.target ? '_blank' : '_self'}}" appAccordionToggle>
+                    <span class="pcoded-micon"><i class="{{ asideItem.icon }}"></i><b>{{ asideItem.short_label }}</b></span>
+                    <span class="pcoded-mtext">{{ asideItem.name }}</span>
+                    <span *ngFor="let asideBadge of asideItem.badge" class="pcoded-badge label label-{{ asideBadge.type }}">{{asideBadge.value}}</span>
+                    <span class="pcoded-mcaret"></span>
+                  </a>
+                </li>
+                <li [routerLinkActive]="['active']" *ngIf="asideItem.type === 'link'" appAccordionLink group="{{asideItem.state}}">
+                  <a appTrigger [routerLink]="['/', asideItem.main_state, asideItem.state]" appAccordionToggle *ngIf="!asideItem.target && asideItem.main_state">
+                    <span class="pcoded-micon"><i class="{{ asideItem.icon }}"></i><b>{{ asideItem.short_label }}</b></span>
+                    <span class="pcoded-mtext">{{ asideItem.name }}</span>
+                    <span *ngFor="let asideBadge of asideItem.badge" class="pcoded-badge label label-{{ asideBadge.type }}">{{asideBadge.value}}</span>
+                    <span class="pcoded-mcaret"></span>
+                  </a>
+                  <a [routerLink]="['/', asideItem.main_state, asideItem.state]" target="_blank" appAccordionToggle *ngIf="asideItem.target && asideItem.main_state">
+                    <span class="pcoded-micon"><i class="{{ asideItem.icon }}"></i><b>{{ asideItem.short_label }}</b></span>
+                    <span class="pcoded-mtext">{{ asideItem.name }}</span>
+                    <span *ngFor="let asideBadge of asideItem.badge" class="pcoded-badge label label-{{ asideBadge.type }}">{{asideBadge.value}}</span>
+                    <span class="pcoded-mcaret"></span>
+                  </a>
+                  <a appTrigger [routerLink]="['/', asideItem.state]" *ngIf="!asideItem.target && !asideItem.main_state" appAccordionToggle>
+                    <span class="pcoded-micon"><i class="{{ asideItem.icon }}"></i><b>{{ asideItem.short_label }}</b></span>
+                    <span class="pcoded-mtext">{{ asideItem.name }}</span>
+                    <span *ngFor="let asideBadge of asideItem.badge" class="pcoded-badge label label-{{ asideBadge.type }}">{{asideBadge.value}}</span>
+                    <span class="pcoded-mcaret"></span>
+                  </a>
+                  <a [routerLink]="['/', asideItem.state]" *ngIf="asideItem.target && !asideItem.main_state" target="_blank" appAccordionToggle>
+                    <span class="pcoded-micon"><i class="{{ asideItem.icon }}"></i><b>{{ asideItem.short_label }}</b></span>
+                    <span class="pcoded-mtext">{{ asideItem.name }}</span>
+                    <span *ngFor="let asideBadge of asideItem.badge" class="pcoded-badge label label-{{ asideBadge.type }}">{{asideBadge.value}}</span>
+                    <span class="pcoded-mcaret"></span>
+                  </a>
+                </li>
+                <li [routerLinkActive]="['active']" *ngIf="asideItem.type === 'sub'" class="pcoded-hasmenu" [attr.dropdown-icon]="dropDownIcon" [attr.subitem-icon]="subItemIcon" appAccordionLink group="{{asideItem.state}}">
+                  <a class="main-click-trigger" [routerLinkActive]="['active']" href="javascript:;" appAccordionToggle>
+                    <span class="pcoded-micon"><i class="{{ asideItem.icon }}"></i><b>{{ asideItem.short_label }}</b></span>
+                    <span class="pcoded-mtext">{{ asideItem.name }}</span>
+                    <span *ngFor="let asideBadge of asideItem.badge" class="pcoded-badge label label-{{ asideBadge.type }}">{{asideBadge.value}}</span>
+                    <span class="pcoded-mcaret"></span>
+                  </a>
+                  <ul class="pcoded-submenu">
+                    <ng-template ngFor let-asideChildren [ngForOf]="asideItem.children">
+                      <li [routerLinkActive]="['active']" *ngIf="asideChildren.type !== 'sub' " appAccordionLink group="{{asideChildren.state}}">
+                        <a appTrigger [routerLink]="['/', asideChildren.main_state, asideChildren.state]" appAccordionToggle *ngIf="!asideChildren.target && asideChildren.main_state">
+                          <span class="pcoded-micon"><i class="{{ asideChildren.icon }}"></i><b>{{ asideChildren.short_label }}</b></span>
+                          <span class="pcoded-mtext">{{ asideChildren.name }}</span>
+                          <span *ngFor="let asideBadge of asideChildren.badge" class="pcoded-badge label label-{{ asideBadge.type }}">{{asideBadge.value}}</span>
+                          <span class="pcoded-mcaret"></span>
+                        </a>
+                        <a [routerLink]="['/', asideChildren.main_state, asideChildren.state]" target="_blank" appAccordionToggle *ngIf="asideChildren.target && asideChildren.main_state">
+                          <span class="pcoded-micon"><i class="{{ asideChildren.icon }}"></i><b>{{ asideChildren.short_label }}</b></span>
+                          <span class="pcoded-mtext">{{ asideChildren.name }}</span>
+                          <span *ngFor="let asideBadge of asideChildren.badge" class="pcoded-badge label label-{{ asideBadge.type }}">{{asideBadge.value}}</span>
+                          <span class="pcoded-mcaret"></span>
+                        </a>
+                        <a appTrigger [routerLink]="['/', asideChildren.state]" *ngIf="!asideChildren.target && !asideChildren.main_state" appAccordionToggle>
+                          <span class="pcoded-micon"><i class="{{ asideChildren.icon }}"></i><b>{{ asideChildren.short_label }}</b></span>
+                          <span class="pcoded-mtext">{{ asideChildren.name }}</span>
+                          <span *ngFor="let asideBadge of asideChildren.badge" class="pcoded-badge label label-{{ asideBadge.type }}">{{asideBadge.value}}</span>
+                          <span class="pcoded-mcaret"></span>
+                        </a>
+                        <a [routerLink]="['/', asideChildren.state]" *ngIf="asideChildren.target && !asideChildren.main_state" target="_blank" appAccordionToggle>
+                          <span class="pcoded-micon"><i class="{{ asideChildren.icon }}"></i><b>{{ asideChildren.short_label }}</b></span>
+                          <span class="pcoded-mtext">{{ asideChildren.name }}</span>
+                          <span *ngFor="let asideBadge of asideChildren.badge" class="pcoded-badge label label-{{ asideBadge.type }}">{{asideBadge.value}}</span>
+                          <span class="pcoded-mcaret"></span>
+                        </a>
+                      </li>
+
+                      <li [routerLinkActive]="['active']" class="pcoded-hasmenu" [attr.dropdown-icon]="dropDownIcon" [attr.subitem-icon]="subItemIcon" *ngIf="asideChildren.type === 'sub'" appAccordionLink group="sub-toggled">
+                        <a href="javascript:;" appAccordionToggle>
+                          <span class="pcoded-micon"><i class="icon-direction-alt"></i></span>
+                          <span class="pcoded-mtext">{{ asideChildren.name }}</span>
+                          <span *ngFor="let asideChildrenBadge of asideChildren.badge" class="pcoded-badge label label-{{ asideChildrenBadge.type }}">{{asideChildrenBadge.value}}</span>
+                          <span class="pcoded-mcaret"></span>
+                        </a>
+                        <ul class="pcoded-submenu">
+                          <ng-template ngFor let-asideChildrenSub [ngForOf]="asideChildren.children">
+                            <li [routerLinkActive]="['active']" *ngIf="asideChildrenSub.type !== 'sub'" appAccordionLink>
+                              <a appTrigger [routerLink]="['/', asideChildren.state, asideChildrenSub.state]" *ngIf="!asideChildrenSub.target">
+                                <span class="pcoded-micon"><i class="icon-angle-right"></i></span>
+                                <span class="pcoded-mtext">{{ asideChildrenSub.name }}</span>
+                                <span *ngFor="let asideChildrenSubBadge of asideChildrenSub.badge" class="pcoded-badge label label-{{ asideChildrenSubBadge.type }}">{{asideChildrenSubBadge.value}}</span>
+                                <span class="pcoded-mcaret"></span>
+                              </a>
+                              <a [routerLink]="['/', asideChildren.state, asideChildrenSub.state]" *ngIf="asideChildrenSub.target" target="_blank">
+                                <span class="pcoded-micon"><i class="icon-angle-right"></i></span>
+                                <span class="pcoded-mtext">{{ asideChildrenSub.name }}</span>
+                                <span *ngFor="let asideChildrenSubBadge of asideChildrenSub.badge" class="pcoded-badge label label-{{ asideChildrenSubBadge.type }}">{{asideChildrenSubBadge.value}}</span>
+                                <span class="pcoded-mcaret"></span>
+                              </a>
+                            </li>
+
+                            <li [routerLinkActive]="['active']" class="pcoded-hasmenu" [attr.dropdown-icon]="dropDownIcon" [attr.subitem-icon]="subItemIcon" *ngIf="asideChildrenSub.type === 'sub'" appAccordionLink group="sub-super-toggled">
+                              <a href="javascript:;" appAccordionToggle>
+                                <span class="pcoded-micon"><i class="icon-direction-alt"></i></span>
+                                <span class="pcoded-mtext">{{ asideChildrenSub.name }}</span>
+                                <span *ngFor="let asideChildrenSubBadge of asideChildrenSub.badge" class="pcoded-badge label label-{{ asideChildrenSubBadge.type }}">{{asideChildrenSubBadge.value}}</span>
+                                <span class="pcoded-mcaret"></span>
+                              </a>
+                              <ul class="pcoded-submenu">
+                                <ng-template ngFor let-asideChildrenSubSuper [ngForOf]="asideChildrenSub.children">
+                                  <li [routerLinkActive]="['active']" appAccordionLink>
+                                    <a appTrigger [routerLink]="['/', asideChildren.state, asideChildrenSub.state, asideChildrenSubSuper.state]" *ngIf="!asideChildrenSubSuper.target">
+                                      <span class="pcoded-micon"><i class="icon-angle-right"></i></span>
+                                      <span class="pcoded-mtext">{{ asideChildrenSubSuper.name }}</span>
+                                      <span *ngFor="let asideChildrenSubSuperBadge of asideChildrenSubSuper.badge" class="pcoded-badge label label-{{ asideChildrenSubSuperBadge.type }}">{{asideChildrenSubSuperBadge.value}}</span>
+                                      <span class="pcoded-mcaret"></span>
+                                    </a>
+                                    <a [routerLink]="['/', asideChildren.state, asideChildrenSub.state, asideChildrenSubSuper.state]" *ngIf="asideChildrenSubSuper.target" target="_blank">
+                                      <span class="pcoded-micon"><i class="icon-angle-right"></i></span>
+                                      <span class="pcoded-mtext">{{ asideChildrenSubSuper.name }}</span>
+                                      <span *ngFor="let asideChildrenSubSuperBadge of asideChildrenSubSuper.badge" class="pcoded-badge label label-{{ asideChildrenSubSuperBadge.type }}">{{asideChildrenSubSuperBadge.value}}</span>
+                                      <span class="pcoded-mcaret"></span>
+                                    </a>
+                                  </li>
+                                </ng-template>
+                              </ul>
+                            </li>
+                          </ng-template>
+                        </ul>
+                      </li>
+                    </ng-template>
+                  </ul>
+                </li>
+              </ul>
+          </span>
+        </div>
+      </nav>
+      <div class="pcoded-wrapper">
+        <div class="pcoded-content">
+          <div class="pcoded-inner-content">
+            <div class="main-body">
+              <div class="page-wrapper">
+                <app-title></app-title>
+                <app-breadcrumbs></app-breadcrumbs>
+                <div class="page-body">
+                  <router-outlet>
+                    <app-spinner></app-spinner>
+                  </router-outlet>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
